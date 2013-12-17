@@ -1,5 +1,5 @@
-require "pragprog_kata08/version"
+require 'pragprog_kata08/trie'
+require 'pragprog_kata08/runner'
 
 module PragprogKata08
-  # Your code goes here...
 end

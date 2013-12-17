@@ -2,7 +2,9 @@
 
 ----------------
 
-TODO: Write a gem description
+See these for more info.
+http://codekata.pragprog.com/2007/01/kata_eight_conf.html
+http://en.wikipedia.org/wiki/Radix_tree
 
 ## Installation
 
@@ -20,17 +22,44 @@ Or install it yourself as:
 
 ## Usage
 
+Find
 ```
 trie = PragprogKata08::Trie.new
-trie.insert("ruby")
+trie.insert("ruby", true)
 trie.find("ruby")
-#=> ["rub", "y"]
+#=> [true]
 
 trie.insert("rubicon")
 trie.find("rub")
-#=> ["rub"]
+#=> []
 ```
 
+Find Concatenated
+```
+trie = PragprogKata08::Trie.new
+trie.insert("jig")
+trie.insert("saw")
+trie.find_concatenated("jigsaw")
+#=> ["jig", "saw"]
+```
+
+
+## Rake
+
+If you're on a Unix-like platform there might exist a word list in
+usr/share/dict/words, if you run rake without explicitly passing a list
+of your own this list will be used.
+
+```
+rake run
+or
+rake
+```
+
+What if you want to use a list of your own?
+```
+rake run path="path_to_my_list"
+```
 ## Contributing
 
 1. Fork it
